@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom/client';
 
 const App = () => {
    return (
-      <h1>Add to cart</h1>
+      <React.Fragment>
+         <h1>Add to Cart</h1>
+         <button>Add</button>
+      </React.Fragment>
    );
 };
 
