@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { app } from '../firebaseConfig';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 const LoginScreen = () => {
-
+   let auth = getAuth();
    const [userData, setUserData] = useState({
       userName: '',
       userEmail: '',
@@ -14,6 +17,18 @@ const LoginScreen = () => {
          [ev.target.name] : ev.target.value,
       }));
    };
+
+   const handleSubmit = (ev) => {
+      ev.preventDefault();
+      createUserWithEmailAndPassword(auth, userData.userEmail, userData.password)
+         .then((resp) => console.log(resp))
+         .catch(err => console.log('Something went wrong!'));
+      setUserData({
+         userEmail: '',
+         userName: '',
+         password: '',
+      });
+   }
 
    return (
       <React.Fragment>
@@ -42,7 +57,7 @@ const LoginScreen = () => {
                   onChange={handleChange}
                   value={userData.password} />
 
-               <button>Register</button>
+               <button onClick={handleSubmit}>Register</button>
             </form>
          </div>
       </React.Fragment>

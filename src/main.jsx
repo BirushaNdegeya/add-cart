@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom/client';
 import Home from "./pages/Home";
 import LoginScreen from './pages/LoginScreen';
+import { BrowserRouter } from "react-router-dom";
 import './index.css';
 
 const App = () => {
