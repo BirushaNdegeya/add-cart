@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap');
+
+*,
+*::after,
+*::before {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Rubik', sans-serif;
+   background-color: #EEF0F4;
+}
+
+html {
+   font-size: 17px;
+}
+
+.flex {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+}
+
+main {
+   display: flex;
+   max-width: 400px;
+   width: 90%;
+   margin: 0 auto;
+   flex-direction: column;
+   row-gap: 2em;
+   padding: 0 2em;
+}
+
+input,
+button {
+   width: 100%;
+   border: 0px;
+   padding: 1em;
+   border-radius: 8px;
+   display: block;
+   font-size: 16px;
+}
+
+input {
+   color: #432000;
+   background-color: #DCE1EB;
+   outline: none;
+}
+
+button {
+   color: #FDFDFD;
+   background-color: #AC485A;
+   cursor: pointer;
+}
+
+button:hover {
+   opacity: .8;
+}
+
+.login-wrapper {
+   max-width: 500px;
+   width: 96%;
+   margin: 0 auto;
+}
+
+.h1-login {
+   text-align: center;
+   margin-top: 2em;
+}
+
+.login-wrapper input {
+   margin: 1em 0px;
+}
