@@ -1,32 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import photo from '../assets/cat.png';
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-
-
+import { app } from '../firebaseConfig';
+import { getDatabase, ref, push } from 'firebase/database';
 
 const Home = () => {
+   const database = getDatabase(app);
+   const friendsInDB = ref(database, "MyFriends");
+   const shoppingListInDB = ref(database, "ShoppingList");
 
-   const appSetting = {
-      databaseURL: 'https://add-to-cart-fee81-default-rtdb.europe-west1.firebasedatabase.app/',
-   }
-
-   const [app, setApp] = useState([]);
-
-   useEffect(() => {
-      setApp(initializeApp(appSetting));
-   })
-   // console.log(app);
-   console.log(getDatabase())
-
-   const [input, setInput] = useState('');
-
+   const [input, setInput] = useState('');   
    const handleChange = (ev) => {
       setInput(ev.target.value);
    }
 
    const handleSubmit = () => {
-      console.log(input);
+      push(shoppingListInDB, input);
+      console.log(`${input} added to the real time database`);
       setInput('');
    };
 

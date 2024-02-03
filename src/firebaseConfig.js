@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyDEK2EixPmRLI1vlkciW6R_60E9eE3sHq8",
   authDomain: "add-to-cart-fee81.firebaseapp.com",
