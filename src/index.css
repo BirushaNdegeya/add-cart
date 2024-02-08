@@ -24,7 +24,7 @@ html {
 main {
    display: flex;
    max-width: 400px;
-   width: 90%;
+   width: 100%;
    margin: 0 auto;
    flex-direction: column;
    row-gap: 2em;
@@ -70,4 +70,23 @@ button:hover {
 
 .login-wrapper input {
    margin: 1em 0px;
+}
+
+header {
+   display: flex;
+   background-color: #000;
+   height: 50px;
+   align-items: center;
+   justify-content: space-between;
+}
+
+header a {
+   color: #fff;
+   text-decoration: none;
+   background-color: #000;
+   margin-left: 1em;
+}
+
+header a:last-child {
+   margin-right: 1em;
 }

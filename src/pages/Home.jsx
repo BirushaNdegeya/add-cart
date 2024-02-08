@@ -9,7 +9,10 @@ const Home = () => {
    const shoppingListInDB = ref(database, "ShoppingList");
    const bookInDB = ref(database, "Books");
 
-   onValue(bookInDB, (snapshot) => console.log(snapshot.val()));
+   onValue(bookInDB, (snapshot) => {
+      let bookArr = Object.values(snapshot.val());
+      bookArr.forEach((book) => console.log(book));
+   });
 
    const [input, setInput] = useState('');  
    const [myList, setMyList] = useState(["oranges", "apples"]); 
@@ -43,7 +46,7 @@ const Home = () => {
             }
          </ul>
       </main>
-   )
-}
+   );
+};
 
 export default Home;
